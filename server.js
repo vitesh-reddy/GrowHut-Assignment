@@ -20,7 +20,7 @@ app.post("/register", async (req, res) => {
 
         
     const regex = "/S+@S+.S+/";
-    if (regex.test(email))
+    if (!regex.test(email))
       return res
         .status(400)
         .json({ success: false, message: "Incorrect Email Format" });
